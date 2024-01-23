@@ -22,11 +22,10 @@ void bubble_sort(int *array, size_t size)
 				array[i] = array[i + 1];
 				array[i + 1] = temp;
 			}
-			printf("%d", array[i]);
-			if (i < size - 1)
-			{
-				printf(", ");
-			}
+		}
+		for (i = 0; i < size - 1; i++)
+		{
+			printf("%d, ", array[i]);
 		}
 		printf("%d\n", array[i]);
 	}
