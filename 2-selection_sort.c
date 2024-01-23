@@ -23,12 +23,13 @@ void selection_sort(int *array, size_t size)
 			{
 				min = m;
 			}
+		}
 		if (min != i)
 		{
 			temp = array[i];
 			array[i] = array[min];
 			array[min] = temp;
-		}
+
 		for (m = 0; m < size - 1; m++)
 		{
 			printf("%d, ", array[m]);
