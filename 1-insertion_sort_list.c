@@ -10,9 +10,9 @@
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *temp;
-	int key;
-	int tempKey;
+	const int key;
 	listint_t *current;
+	int tempKey;
 	
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 	{
@@ -23,15 +23,14 @@ void insertion_sort_list(listint_t **list)
 	while (current != NULL)
 	{
 		temp = current;
-		key = current->n;
-		while (temp->prev != NULL && temp->prev->n > key)
+		key = temp->n;
+		tempKey = key;
+		while (temp->prev != NULL && temp->prev->n > tempKey)
 		{
-			tempKey = temp->prev->n;
-			temp->prev->n = temp->n;
-			temp->n = tempKey;
+			temp->n = temp->prev->n;
 			temp = temp->prev;
 		}
-
+		temp->n = tempKey;
 		current = current->next;
 	}
 }
